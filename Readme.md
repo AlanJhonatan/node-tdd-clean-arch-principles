@@ -11,16 +11,25 @@
 - High Coupling
 - Improper Instantiation _(It's not a literary term)_
 - Code Testing in Production _(It's not a literary term)_
+- Duplicate Code
+- Shotgun Surgery
 
 ## 🤗 Design Patterns & Principles & Conventions
 
-- (YAGNI) You Ain't Gonna Need It
 - (SRP) Single Responsability
+- (LSP) Liskov Substitution
+- (DIP) Dependency Inversion
 - (AAA) Arrange, Act, Assert
 - (DI) Dependency Injection
+- (YAGNI) You Ain't Gonna Need It
+- (SUT) System Under Test _(Code convention)_
+- Repository Pattern
+- Test Doubles (Mock, Stub & Spy)
 
 # 🧐 Principles to check
 
 - Value Objects
 - Repository
 - Red/Green Refactor
+- Small Commits
+- Dublês de teste: **Mock**, stub, dummy, fake e **spy**

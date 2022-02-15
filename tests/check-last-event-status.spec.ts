@@ -4,17 +4,25 @@ class CheckLastEventStatus {
   ) {}
 
   async perform(groupId: string): Promise<void> {
-    this.loadLastEventRepository.groupId = groupId;
+    await this.loadLastEventRepository.loadLastEvent(groupId);
   }
 }
 
-class LoadLastEventRepository {
+interface LoadLastEventRepository {
+  loadLastEvent: (groupId: string) => Promise<void>;
+}
+
+class LoadLastEventRepositoryMock implements LoadLastEventRepository {
   groupId?: string;
+
+  async loadLastEvent(groupId: string): Promise<void> {
+    this.groupId = groupId;
+  }
 }
 
 describe('CheckLastEventStatus', () => {
   it('should get last event data', async () => {
-    const loadLastEventRepository = new LoadLastEventRepository();
+    const loadLastEventRepository = new LoadLastEventRepositoryMock();
     const checkLastEventStatus = new CheckLastEventStatus(
       loadLastEventRepository
     );

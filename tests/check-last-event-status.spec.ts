@@ -58,6 +58,16 @@ class LoadLastEventRepositorySpy implements LoadLastEventRepository {
     };
   }
 
+  setEndDateEqualReviewDate(): void {
+    const reviewDurationInHours = 1;
+    const reviewDurationInMs = 1 * 60 * 60 * 1000;
+
+    this.output = {
+      endDate: new Date(new Date().getTime() - reviewDurationInMs),
+      reviewDurationInHours,
+    };
+  }
+
   async loadLastEvent({
     groupId,
   }: {
@@ -146,6 +156,16 @@ describe('CheckLastEventStatus', () => {
     const { sut, loadLastEventRepository } = makeSut();
 
     loadLastEventRepository.setEndDateBeforeReviewDate();
+
+    const eventStatus = await sut.perform({ groupId });
+
+    expect(eventStatus.status).toBe('inReview');
+  });
+
+  it('should return status inReview when now is equal to review time', async () => {
+    const { sut, loadLastEventRepository } = makeSut();
+
+    loadLastEventRepository.setEndDateEqualReviewDate();
 
     const eventStatus = await sut.perform({ groupId });
 

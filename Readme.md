@@ -13,6 +13,7 @@
 - Code Testing in Production _(It's not a literary term)_
 - Duplicate Code
 - Shotgun Surgery
+- Long Parameter List
 
 ## 🤗 Design Patterns & Principles & Conventions
 
@@ -23,8 +24,10 @@
 - (DI) Dependency Injection
 - (YAGNI) You Ain't Gonna Need It
 - (SUT) System Under Test _(Code convention)_
-- Repository Pattern
 - Test Doubles (Mock, Stub & Spy)
+- Repository Pattern
+- Strategy Pattern
+- Factory Pattern
 
 # 🧐 Principles to check
 

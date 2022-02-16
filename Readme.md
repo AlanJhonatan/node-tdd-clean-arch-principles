@@ -14,6 +14,7 @@
 - Duplicate Code
 - Shotgun Surgery
 - Long Parameter List
+- Primitive Obsession
 
 ## 🤗 Design Patterns & Principles & Conventions
 

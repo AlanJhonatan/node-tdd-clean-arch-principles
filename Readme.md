@@ -15,6 +15,7 @@
 - Shotgun Surgery
 - Long Parameter List
 - Primitive Obsession
+- Bad Variable Naming
 
 ## 🤗 Design Patterns & Principles & Conventions
 
@@ -29,6 +30,7 @@
 - Repository Pattern
 - Strategy Pattern
 - Factory Pattern
+- Clean Code
 
 # 🧐 Principles to check
 
